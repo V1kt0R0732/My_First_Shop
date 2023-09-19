@@ -1,4 +1,27 @@
-<!--A Design by W3layouts
+<?php
+/* Smarty version 4.3.2, created on 2023-09-19 10:55:58
+  from 'C:\OSPanel\domains\MyFirstShop\templates\main.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.2',
+  'unifunc' => 'content_6509540ef03d95_22064474',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '6ac1af9719c8799db8847093819ee70bae8c636e' => 
+    array (
+      0 => 'C:\\OSPanel\\domains\\MyFirstShop\\templates\\main.tpl',
+      1 => 1695110143,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6509540ef03d95_22064474 (Smarty_Internal_Template $_smarty_tpl) {
+?><!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -7,20 +30,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{$metaTitle}</title>
+    <title><?php echo $_smarty_tpl->tpl_vars['metaTitle']->value;?>
+</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{$metaDiscription}">
-    <meta name="keywords" content="={$metaKeyWords}">
+    <meta name="description" content="<?php echo $_smarty_tpl->tpl_vars['metaDiscription']->value;?>
+">
+    <meta name="keywords" content="=<?php echo $_smarty_tpl->tpl_vars['metaKeyWords']->value;?>
+">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!--theme-style-->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
     <link href="css/cat.css" rel="stylesheet" type="text/css" media="all" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <?php echo '<script'; ?>
+ type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } <?php echo '</script'; ?>
+>
     <!--fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!--//fonts-->
-    <script src="js/jquery.min.js"></script>
+    <?php echo '<script'; ?>
+ src="js/jquery.min.js"><?php echo '</script'; ?>
+>
     <!--script-->
 </head>
 <body>
@@ -70,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
 
                 <div class="search">
-                    <input type="text" value=""{literal} onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"{/literal} >
+                    <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
                     <input type="submit"  value="SEARCH">
 
                 </div>
@@ -82,7 +112,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li><a href="login.html"><span> </span>LOGIN</a></li> |
                     <li ><a href="register.html">SIGNUP</a></li>
                 </ul>
-                <div class="cart"><a href="order.php"><span> </span>CART - {if isset($count_basket)}{$count_basket}{else}0{/if}</a></div>
+                <div class="cart"><a href="order.php"><span> </span>CART - <?php if ((isset($_smarty_tpl->tpl_vars['count_basket']->value))) {
+echo $_smarty_tpl->tpl_vars['count_basket']->value;
+} else { ?>0<?php }?></a></div>
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>
@@ -93,38 +125,77 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="container">
     <div class="shoes-grid">
         <span>
-        {section loop = $menu name = i}
-            <span><a href="{$menu[i].page}.php"><span> </span>{$menu[i].name}</a></span>
-        {/section}
+        <?php
+$__section_i_1_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['menu']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_i_1_total = $__section_i_1_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_i'] = new Smarty_Variable(array());
+if ($__section_i_1_total !== 0) {
+for ($__section_i_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] = 0; $__section_i_1_iteration <= $__section_i_1_total; $__section_i_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']++){
+?>
+            <span><a href="<?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['page'];?>
+.php"><span> </span><?php echo $_smarty_tpl->tpl_vars['menu']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_i']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_i']->value['index'] : null)]['name'];?>
+</a></span>
+        <?php
+}
+}
+?>
     </div>
-    <h1 style="padding-left:325px">{$title}</h1>
+    <h1 style="padding-left:325px"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</h1>
 
-    {if (isset($page) && $page == 'catalog')}
+    <?php if (((isset($_smarty_tpl->tpl_vars['page']->value)) && $_smarty_tpl->tpl_vars['page']->value == 'catalog')) {?>
         <div class="main__categories categories">
             <div class="categories__body">
                 <div class="categories__tirle">Категорії</div>
-                {section loop = $category name = k}
-                    {if (isset($id_cat) && !empty($id_cat) && $id_cat == $category[k].id_cat)}
+                <?php
+$__section_k_2_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['category']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_k_2_total = $__section_k_2_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_k'] = new Smarty_Variable(array());
+if ($__section_k_2_total !== 0) {
+for ($__section_k_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] = 0; $__section_k_2_iteration <= $__section_k_2_total; $__section_k_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']++){
+?>
+                    <?php if (((isset($_smarty_tpl->tpl_vars['id_cat']->value)) && !empty($_smarty_tpl->tpl_vars['id_cat']->value) && $_smarty_tpl->tpl_vars['id_cat']->value == $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'])) {?>
                         <div class="categories__text" style="background-color:white; flex:1 1 auto; border-radius:20px">
                             <div class="categories__icon">
                                 <img src="" alt="">
                             </div>
-                            <a href="catalog.php?id_cat={$category[k].id_cat}{if isset($min_price)}&min_price={$min_price}{/if}{if isset($max_price)}&max_price={$max_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($sort)}&sort={$sort}{/if}" class="">
-                                <div class="categories__paragraf">{$category[k].name}</div>
+                            <a href="catalog.php?id_cat=<?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'];
+if ((isset($_smarty_tpl->tpl_vars['min_price']->value))) {?>&min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>&max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>&search=<?php echo $_smarty_tpl->tpl_vars['search']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
+}?>" class="">
+                                <div class="categories__paragraf"><?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['name'];?>
+</div>
                             </a>
                         </div>
-                    {else}
+                    <?php } else { ?>
                         <div class="categories__text" >
                             <div class="categories__icon">
                                 <img src="" alt="">
                             </div>
-                            <a href="catalog.php?id_cat={$category[k].id_cat}{if isset($min_price)}&min_price={$min_price}{/if}{if isset($max_price)}&max_price={$max_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($sort)}&sort={$sort}{/if}" class="">
-                                <div class="categories__paragraf">{$category[k].name}</div>
+                            <a href="catalog.php?id_cat=<?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'];
+if ((isset($_smarty_tpl->tpl_vars['min_price']->value))) {?>&min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>&max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>&search=<?php echo $_smarty_tpl->tpl_vars['search']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
+}?>" class="">
+                                <div class="categories__paragraf"><?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['name'];?>
+</div>
                             </a>
                         </div>
-                    {/if}
+                    <?php }?>
 
-                {/section}
+                <?php
+}
+}
+?>
                 <div class="categories__text">
                     <div class="categories__icon">
                         <img src="" alt="">
@@ -135,76 +206,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <form action="catalog.php" method="get">
                     <div class="categories__tirle">Пошук</div>
-                    <input type="text" name="search" {if isset($search) && !empty($search)}value="{$search}"  {else}placeholder="Пошук за назвою"{/if}>
+                    <input type="text" name="search" <?php if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['search']->value;?>
+"  <?php } else { ?>placeholder="Пошук за назвою"<?php }?>>
                     <br>
-                    <input type="number" name="min_price" min="0" {if isset($min_price)}value="{$min_price}" {else}placeholder="Мін. ціна"{/if}> -Min
+                    <input type="number" name="min_price" min="0" <?php if ((isset($_smarty_tpl->tpl_vars['min_price']->value))) {?>value="<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
+" <?php } else { ?>placeholder="Мін. ціна"<?php }?>> -Min
                     <br>
-                    <input type="number" name="max_price" {if isset($max_price)}value="{$max_price}" {else}placeholder="Макс. ціна"{/if}> -Max
+                    <input type="number" name="max_price" <?php if ((isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>value="<?php echo $_smarty_tpl->tpl_vars['max_price']->value;?>
+" <?php } else { ?>placeholder="Макс. ціна"<?php }?>> -Max
                     <br>
-                    {if (isset($id_cat))}
-                        <input type="hidden" name="id_cat" value="{$id_cat}">
-                    {/if}
-                    {if (isset($sort))}
-                        <input type="hidden" name="sort" value="{$sort}">
-                    {/if}
+                    <?php if (((isset($_smarty_tpl->tpl_vars['id_cat']->value)))) {?>
+                        <input type="hidden" name="id_cat" value="<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;?>
+">
+                    <?php }?>
+                    <?php if (((isset($_smarty_tpl->tpl_vars['sort']->value)))) {?>
+                        <input type="hidden" name="sort" value="<?php echo $_smarty_tpl->tpl_vars['sort']->value;?>
+">
+                    <?php }?>
                     <input type="submit" name="send" value="Пошук">
                 </form>
                 <form action="catalog.php" method="get">
                     <div class="categories__tirle">Кільсть Товарів</div>
-                    {if isset($search)}
-                        <input type="hidden" name="search" value="{$search}">
-                    {/if}
-                    {if isset($min_price)}
-                        <input type="hidden" name="min_price" value="{$min_price}">
-                    {/if}
-                    {if isset($max_price)}
-                        <input type="hidden" name="max_price" value="{$max_price}">
-                    {/if}
-                    {if (isset($id_cat))}
-                        <input type="hidden" name="id_cat" value="{$id_cat}">
-                    {/if}
-                    {if (isset($sort))}
-                        <input type="hidden" name="sort" value="{$sort}">
-                    {/if}
+                    <?php if ((isset($_smarty_tpl->tpl_vars['search']->value))) {?>
+                        <input type="hidden" name="search" value="<?php echo $_smarty_tpl->tpl_vars['search']->value;?>
+">
+                    <?php }?>
+                    <?php if ((isset($_smarty_tpl->tpl_vars['min_price']->value))) {?>
+                        <input type="hidden" name="min_price" value="<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
+">
+                    <?php }?>
+                    <?php if ((isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>
+                        <input type="hidden" name="max_price" value="<?php echo $_smarty_tpl->tpl_vars['max_price']->value;?>
+">
+                    <?php }?>
+                    <?php if (((isset($_smarty_tpl->tpl_vars['id_cat']->value)))) {?>
+                        <input type="hidden" name="id_cat" value="<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;?>
+">
+                    <?php }?>
+                    <?php if (((isset($_smarty_tpl->tpl_vars['sort']->value)))) {?>
+                        <input type="hidden" name="sort" value="<?php echo $_smarty_tpl->tpl_vars['sort']->value;?>
+">
+                    <?php }?>
                     <select name="note">
-                        <option value="1" {if (isset($note) && $note == 1)}selected{/if}>1</option>
-                        <option value="3" {if (isset($note) && $note == 3)}selected{/if}>3</option>
-                        <option value="5" {if (isset($note) && $note == 5)}selected{/if}>5</option>
-                        <option value="6" {if (isset($note) && $note == 6)}selected{/if}>6</option>
+                        <option value="1" <?php if (((isset($_smarty_tpl->tpl_vars['note']->value)) && $_smarty_tpl->tpl_vars['note']->value == 1)) {?>selected<?php }?>>1</option>
+                        <option value="3" <?php if (((isset($_smarty_tpl->tpl_vars['note']->value)) && $_smarty_tpl->tpl_vars['note']->value == 3)) {?>selected<?php }?>>3</option>
+                        <option value="5" <?php if (((isset($_smarty_tpl->tpl_vars['note']->value)) && $_smarty_tpl->tpl_vars['note']->value == 5)) {?>selected<?php }?>>5</option>
+                        <option value="6" <?php if (((isset($_smarty_tpl->tpl_vars['note']->value)) && $_smarty_tpl->tpl_vars['note']->value == 6)) {?>selected<?php }?>>6</option>
                     </select>
                     <input type="submit" name="send" value="Фільтрація">
                 </form>
 
             </div>
         </div>
-    {/if}
+    <?php }?>
 
 
-    <div style="padding-left:300px">{$fullContent}</div>
+    <div style="padding-left:300px"><?php echo $_smarty_tpl->tpl_vars['fullContent']->value;?>
+</div>
 
 
-    {*    <div class="main__catalog catalog">*}
-    {*        <div class="catalog__container _container">*}
-    {*            <div class="catalog__block block">*}
-    {*                <div class="catalog__body">*}
-    {*                    <a href="" class="block__img">*}
-    {*                        <img src="img/catalog/01.webp" alt="phone">*}
-    {*                    </a>*}
-    {*                    <div class="block__body">*}
-    {*                        <h2 class="body__title">Телефон звичайний шось там</h2>*}
-    {*                        <h2 class="body__title">Мобільний телефон <?=$row['model']?></h2>*}
-    {*                        <div class="body__price">*}
-    {*                            <div class="price__number">1000 $</div>*}
-    {*                            <a href="">*}
-    {*                                <button class="price__button">Придбати</button>*}
-    {*                            </a>*}
-    {*                        </div>*}
-    {*                    </div>*}
-    {*                </div>*}
-    {*            </div>*}
-    {*        </div>*}
-    {*    </div>*}
-    <!--
+                                                                                        <!--
     <a href="single.html">
         <div class="wrap-in">
             <div class="wmuSlider example1 slide-grid">
@@ -265,10 +326,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <li><a href="#" class="">1</a></li>
         <li><a href="#" class="">2</a></li>
     </ul>
-    <script src="js/jquery.wmuSlider.js"></script>
-    <script>
+    <?php echo '<script'; ?>
+ src="js/jquery.wmuSlider.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
         $('.example1').wmuSlider();
-    </script>
+    <?php echo '</script'; ?>
+>
     -->
 </div>
 
@@ -488,88 +553,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="clearfix"> </div>
 
 
-{*<div class="sub-cate">*}
-{*    <div class=" top-nav rsidebar span_1_of_left">*}
-{*        <h3 class="cate">CATEGORIES</h3>*}
-{*        <ul class="menu">*}
-{*            <li class="item1"><a href="#">Curabitur sapien<img class="arrow-img" src="images/arrow1.png" alt=""/> </a>*}
-{*                <ul class="cute">*}
-{*                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>*}
-{*                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>*}
-{*                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>*}
-{*                </ul>*}
-{*            </li>*}
-{*            <li class="item2"><a href="#">Dignissim purus <img class="arrow-img " src="images/arrow1.png" alt=""/></a>*}
-{*                <ul class="cute">*}
-{*                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>*}
-{*                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>*}
-{*                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>*}
-{*                </ul>*}
-{*            </li>*}
-{*            <li class="item3"><a href="#">Ultrices id du<img class="arrow-img img-arrow" src="images/arrow1.png" alt=""/> </a>*}
-{*                <ul class="cute">*}
-{*                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>*}
-{*                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>*}
-{*                    <li class="subitem3"><a href="product.html">Automatic Fails</a></li>*}
-{*                </ul>*}
-{*            </li>*}
-{*            <li class="item4"><a href="#">Cras iacaus rhone <img class="arrow-img img-left-arrow" src="images/arrow1.png" alt=""/></a>*}
-{*                <ul class="cute">*}
-{*                    <li class="subitem1"><a href="product.html">Cute Kittens </a></li>*}
-{*                    <li class="subitem2"><a href="product.html">Strange Stuff </a></li>*}
-{*                    <li class="subitem3"><a href="product.html">Automatic Fails </a></li>*}
-{*                </ul>*}
-{*            </li>*}
-{*            <li>*}
-{*                <ul class="kid-menu">*}
-{*                    <li><a href="product.html">Tempus pretium</a></li>*}
-{*                    <li ><a href="product.html">Dignissim neque</a></li>*}
-{*                    <li ><a href="product.html">Ornared id aliquet</a></li>*}
-{*                </ul>*}
-{*            </li>*}
-{*            <ul class="kid-menu ">*}
-{*                <li><a href="product.html">Commodo sit</a></li>*}
-{*                <li ><a href="product.html">Urna ac tortor sc</a></li>*}
-{*                <li><a href="product.html">Ornared id aliquet</a></li>*}
-{*                <li><a href="product.html">Urna ac tortor sc</a></li>*}
-{*                <li ><a href="product.html">Eget nisi laoreet</a></li>*}
-{*                <li><a href="product.html">Faciisis ornare</a></li>*}
-{*                <li class="menu-kid-left"><a href="contact.html">Contact us</a></li>*}
-{*            </ul>*}
-{*        </ul>*}
-{*    </div>*}
-{*    <!--initiate accordion-->*}
-{*    <script type="text/javascript">*}
-{*        $(function() {*}
-{*            var menu_ul = $('.menu > li > ul'),*}
-{*                menu_a  = $('.menu > li > a');*}
-{*            menu_ul.hide();*}
-{*            menu_a.click(function(e) {*}
-{*                e.preventDefault();*}
-{*                if(!$(this).hasClass('active')) {*}
-{*                    menu_a.removeClass('active');*}
-{*                    menu_ul.filter(':visible').slideUp('normal');*}
-{*                    $(this).addClass('active').next().stop(true,true).slideDown('normal');*}
-{*                } else {*}
-{*                    $(this).removeClass('active');*}
-{*                    $(this).next().stop(true,true).slideUp('normal');*}
-{*                }*}
-{*            });*}
 
-{*        });*}
-{*    </script>*}
-{*    <!--*}
-{*    <div class=" chain-grid menu-chain">*}
-{*        <a href="single.html"><img class="img-responsive chain" src="images/wat.jpg" alt=" " /></a>*}
-{*        <div class="grid-chain-bottom chain-watch">*}
-{*            <span class="actual dolor-left-grid">300$</span>*}
-{*            <span class="reducedfrom">500$</span>*}
-{*            <h6><a href="single.html">Lorem ipsum dolor</a></h6>*}
-{*        </div>*}
-{*    </div>*}
-{*    <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a>*}
-{*    -->*}
-{*</div>*}
 <div class="clearfix"> </div>
 </div>
 
@@ -581,7 +565,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <h6>NEWS-LETTER</h6>
                 <div class="sub-left-right">
                     <form>
-                        <input type="text" value="Enter email here"{literal} onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}"{/literal} />
+                        <input type="text" value="Enter email here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter email here';}" />
                         <input type="submit" value="SUBSCRIBE" />
                     </form>
                 </div>
@@ -664,4 +648,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 </body>
-</html>
+</html><?php }
+}

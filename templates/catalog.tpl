@@ -26,7 +26,7 @@
                         <h3 class="body__title">Висота: {$catalog[k].height}см.</h3>
                         <div class="body__price">
                             <div class="price__number">{$catalog[k].price}</div>
-                            <a href="">
+                            <a href="basket.php?id={$catalog[k].id}&mode=add">
                                 <button class="price__button">Придбати</button>
                             </a>
                         </div>
@@ -48,19 +48,19 @@
                 {if $active_page == 1}
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> < </td>
                 {else}
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page - 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}min_price={$min_price}&max_price={$max_price}"> < </a></td>
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page - 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}"> < </a></td>
                 {/if}
                 {for $k = 1; $k <= $count_page; $k++}
                     {if ($active_page == $k)}
                         <td style="background-color:#bbb8b8; padding:7px; border-radius:10px">{$k}</td>
                     {else}
-                        <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$k}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}">{$k}</a></td>
+                        <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$k}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}">{$k}</a></td>
                     {/if}
                 {/for}
                 {if $active_page == $count_page}
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> > </td>
                 {else}
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page + 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}"> > </a></td>
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page + 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}"> > </a></td>
                 {/if}
             {/if}
         </tr>
