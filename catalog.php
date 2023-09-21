@@ -178,15 +178,7 @@ else{
         $num++;
     }
 
-    $all_basket = 0;
-    if (isset($_SESSION['basket'])){
-        if (count($_SESSION['basket']) > 0){
-            for($k = 0; $k < count($_SESSION['basket']); $k++){
-                $all_basket += $_SESSION['basket'][$k]['count'];
-            }
-            $smarty_main -> assign('count_basket', $all_basket);
-        }
-    }
+
 
 
 

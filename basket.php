@@ -2,7 +2,7 @@
 
     require_once('header.php');
 
-    if (isset($_GET['id'], $_GET['mode']) && !empty($_GET['id']) && $_GET['mode'] = 'add'){
+    if (isset($_GET['id'], $_GET['mode']) && !empty($_GET['id']) && $_GET['mode'] == 'add'){
 
         $all_basket = 0;
         $exist = false;
@@ -32,11 +32,47 @@
 
         }
 
+    }
+    elseif(isset($_GET['id'], $_GET['mode']) && !empty($_GET['id']) && $_GET['mode'] == 'dell'){
 
+        if (isset($_SESSION['basket']) && !empty($_SESSION['basket'])){
+            for($i = 0; $i < count($_SESSION['basket']); $i++){
+                if ($_SESSION['basket'][$i]['id'] == $_GET['id']){
+                    unset($_SESSION['basket'][$i]);
+                    break;
+                }
+            }
 
+            foreach($_SESSION['basket'] as $tmp){
+                if (!empty($tmp)){
+                    $items[] = $tmp;
+                }
+            }
 
-        header('location:catalog.php');
+            unset($_SESSION['basket']);
+            $_SESSION['basket'] = [];
+            $_SESSION['basket'] = $items;
+            unset($items);
+        }
+    }
+    elseif(isset($_GET['mode']) && $_GET['mode'] == 'clear'){
+        if (isset($_SESSION['basket']) && !empty($_SESSION['basket'])){
+            unset($_SESSION['basket']);
+        }
+
+    }
+    elseif(isset($_POST['send'])){
+        for ($i = 0; $i < count($_SESSION['basket']); $i++){
+            $tmp_name = 'count' . $_SESSION['basket'][$i]['id'];
+            $_SESSION['basket'][$i]['count'] = $_POST[$tmp_name];
+        }
+        header('location:order.php');
     }
 
-
+if (isset($_GET['mode']) && $_GET['mode'] == 'dell'){
+    header('location:order.php');
+}
+elseif (isset($_GET['mode']) && $_GET['mode'] == 'add' || $_GET['mode'] == 'clear'){
+    header('location:catalog.php');
+}
 

@@ -33,6 +33,16 @@
             $row['fullContent'] = $fullContent;
         }
 
+        $all_basket = 0;
+        if (isset($_SESSION['basket']) && !empty($_SESSION['basket'])){
+            if (count($_SESSION['basket']) > 0){
+                for($k = 0; $k < count($_SESSION['basket']); $k++){
+                    $all_basket += $_SESSION['basket'][$k]['count'];
+                }
+                $smarty_main -> assign('count_basket', $all_basket);
+            }
+        }
+
         $smarty_main -> assign('metaTitle', $row['metaTitle']);
         $smarty_main -> assign('metaDiscription', $row['metaDiscription']);
         $smarty_main -> assign('metaKeyWords', $row['metaKeyWords']);
