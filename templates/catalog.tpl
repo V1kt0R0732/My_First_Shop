@@ -26,9 +26,14 @@
                         <h3 class="body__title">Висота: {$catalog[k].height}см.</h3>
                         <div class="body__price">
                             <div class="price__number">{$catalog[k].price}</div>
-                            <a href="basket.php?id={$catalog[k].id}&mode=add">
-                                <button class="price__button">Придбати</button>
-                            </a>
+                            {if $catalog[k].colvo == 0}
+                                Товар закінчився на складі
+                            {else}
+                                <a href="basket.php?id={$catalog[k].id}&mode=add{if isset($active_page) && !empty($active_page)}&page={$active_page}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_cat) && !empty($id_cat)}&id_cat={$id_cat}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($min_price, $max_price)}&min_price={$min_price}&max_price={$max_price}{/if}{if isset($note) && !empty($note)}&note={$note}{/if}">
+                                    <button class="price__button">Придбати</button>
+                                </a>
+                            {/if}
+
                         </div>
                     </div>
                 </div>

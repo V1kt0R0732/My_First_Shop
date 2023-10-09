@@ -12,7 +12,6 @@
 
     if(isset($page)) {
 
-
         $query = "select metaTitle, metaDiscription, metaKeyWords, title, fullContent from settingPage where page = '$page'";
         $result = mysqli_query($dbc, $query) or die("Query Error");
         $row = mysqli_fetch_array($result);
@@ -43,6 +42,8 @@
             }
         }
 
+
+
         $smarty_main -> assign('metaTitle', $row['metaTitle']);
         $smarty_main -> assign('metaDiscription', $row['metaDiscription']);
         $smarty_main -> assign('metaKeyWords', $row['metaKeyWords']);
@@ -52,7 +53,7 @@
         //////////////////////////////////////////////
         /*              Меню addMenu                */
 
-        $queryMenu = "select name, page from settingPage order by prior asc";
+        $queryMenu = "select name, page from settingPage where prior < 6 order by prior asc";
 
         $resultMenu = mysqli_query($dbc, $queryMenu) or die("Query Menu Error");
 
@@ -79,6 +80,22 @@
 
         $smarty_main -> assign('category', $category);
 
+        if (isset($_COOKIE['id'], $_COOKIE['FIO'], $_COOKIE['email'], $_COOKIE['phone'], $_COOKIE['adress'])){
+
+            $_SESSION['user_id'] = $_COOKIE['id'];
+            $_SESSION['user_FIO'] = $_COOKIE['FIO'];
+            $_SESSION['user_adress'] = $_COOKIE['adress'];
+            $_SESSION['user_email'] = $_COOKIE['email'];
+            $_SESSION['user_phone'] = $_COOKIE['phone'];
+
+
+            $smarty_main -> assign('user_id', $_SESSION['user_id']);
+            $smarty_main -> assign('user_FIO', $_SESSION['user_FIO']);
+            $smarty_main -> assign('user_email', $_SESSION['user_email']);
+            $smarty_main -> assign('user_phone', $_SESSION['user_phone']);
+            $smarty_main -> assign('user_adress', $_SESSION['user_adress']);
+
+        }
 
 
 

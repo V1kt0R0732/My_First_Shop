@@ -26,8 +26,8 @@ if (isset($_GET['search']) && !empty($_GET['search'])){
 
     $final_words = implode(' or ', $no_words);
 
-    $smarty_catalog -> assign('search', $search);
-    $smarty_main -> assign('search', $search);
+    $smarty_catalog -> assign('search', $_GET['search']);
+    $smarty_main -> assign('search', $_GET['search']);
 
 }
 
@@ -108,10 +108,10 @@ $skip = ($active_page - 1) * $note;
 /* Main Query */
 
 if (isset($_GET['id_cat']) && !empty($_GET['id_cat'])){
-    $query = "select catalog.id as catalog_id, catalog.name as catalog_name, price, height, wight, name_photo from categories inner join catalog on catalog.id_cat = categories.id inner join photos on catalog.id = photos.id_tovar where status = 1 and id_tovar = catalog.id and categories.id = {$_GET['id_cat']}";
+    $query = "select catalog.id as catalog_id, catalog.name as catalog_name, price, colvo, height, wight, name_photo from categories inner join catalog on catalog.id_cat = categories.id inner join photos on catalog.id = photos.id_tovar where status = 1 and id_tovar = catalog.id and categories.id = {$_GET['id_cat']}";
 }
 else{
-    $query = "select catalog.id as catalog_id, catalog.name as catalog_name, price, height, wight, name_photo from catalog inner join photos on catalog.id = photos.id_tovar where status = 1 and id_tovar = catalog.id";
+    $query = "select catalog.id as catalog_id, catalog.name as catalog_name, price, colvo, height, wight, name_photo from catalog inner join photos on catalog.id = photos.id_tovar where status = 1 and id_tovar = catalog.id";
 }
 
 
@@ -174,7 +174,7 @@ else{
 
     while($row = mysqli_fetch_array($result)){
 
-        $items[] = ['id'=>$row['catalog_id'], 'name'=>$row['catalog_name'],'price'=>$row['price'],'height'=>$row['height'],'wight'=>$row['wight'],'photo'=>$row['name_photo'],'num'=>$num];
+        $items[] = ['id'=>$row['catalog_id'], 'name'=>$row['catalog_name'],'price'=>$row['price'], 'colvo'=>$row['colvo'],'height'=>$row['height'],'wight'=>$row['wight'],'photo'=>$row['name_photo'],'num'=>$num];
         $num++;
     }
 
@@ -185,7 +185,10 @@ else{
     /* Assign */
     $smarty_catalog -> assign('catalog', $items);
     $smarty_catalog -> assign('count_page', $count_page);
+
     $smarty_catalog -> assign('active_page', $active_page);
+    $smarty_main -> assign('active_page', $active_page);
+
     $smarty_catalog -> assign('note', $note);
     $smarty_main -> assign('note', $note);
 

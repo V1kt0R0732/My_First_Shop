@@ -26,9 +26,17 @@
     </tr>
     <tr>
         <th colspan="5"><a href="basket.php?mode=clear">Очистити</a></th>
-        <th colspan="2"><a>Сплатити</a></th>
+        <th colspan="2"><a href="order_buy.php">Сплатити</a></th>
     </tr>
-    <tr><th colspan="7"><input type="submit" name="send" value="Перерахувати"></th></tr>
+    <tr>
+        {if isset($ready_params) && !empty($ready_params)}
+            <th colspan="4"><a href="catalog.php?{$ready_params}">Повернутись до каталогу</a></th>
+            <input type="hidden" name="ready_params" value="{$ready_params}">
+            {else}
+            <th colspan="4"><a href="catalog.php">Повернутись до каталогу</a></th>
+        {/if}
+        <th colspan="3"><input type="submit" name="send" value="Перерахувати"></th>
+    </tr>
 
 </table>
 </form>

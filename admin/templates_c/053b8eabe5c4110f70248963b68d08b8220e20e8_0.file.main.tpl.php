@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.3.2, created on 2023-10-04 17:19:23
+  from 'C:\OSPanel\domains\MyFirstShop\admin\templates\main.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.2',
+  'unifunc' => 'content_651d746b837ab1_93866272',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '053b8eabe5c4110f70248963b68d08b8220e20e8' => 
+    array (
+      0 => 'C:\\OSPanel\\domains\\MyFirstShop\\admin\\templates\\main.tpl',
+      1 => 1696429161,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_651d746b837ab1_93866272 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,8 +29,12 @@
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
+>
     <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
@@ -43,7 +70,7 @@
 
 <nav class="pcoded-navbar">
     <div class="navbar-wrapper">
-        {if (isset($user_name, $user_role, $user_photo))}
+        <?php if (((isset($_smarty_tpl->tpl_vars['user_name']->value) && isset($_smarty_tpl->tpl_vars['user_role']->value) && isset($_smarty_tpl->tpl_vars['user_photo']->value)))) {?>
         <div class="navbar-brand header-logo">
             <a href="index.php" class="b-brand">
                 <div class="b-bg">
@@ -88,7 +115,7 @@
                         <li class=""><a href="layout-menu-icon.html" class="" target="_blank">Color icon</a></li>
                     </ul>
                 </li>
-                {if (isset($user_role) && $user_role == 1)}
+                <?php if (((isset($_smarty_tpl->tpl_vars['user_role']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 1)) {?>
                 <li data-username="widget Statistic Data Table User card Chart" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layers"></i></span><span class="pcoded-mtext">Сторінки</span><span class="pcoded-badge label label-info">100+</span></a>
                     <ul class="pcoded-submenu">
@@ -99,11 +126,11 @@
                         <li class=""><a href="widget-chart.html" class="">Chart</a></li>
                     </ul>
                 </li>
-                {/if}
+                <?php }?>
                 <li class="nav-item pcoded-menu-caption">
                     <label>UI Element</label>
                 </li>
-                {if isset($user_role) && $user_role == 1}
+                <?php if ((isset($_smarty_tpl->tpl_vars['user_role']->value)) && $_smarty_tpl->tpl_vars['user_role']->value == 1) {?>
                 <li data-username="basic components Button Alert Badges breadcrumb Paggination progress Tooltip popovers Carousel Cards Collapse Tabs pills Modal Grid System Typography Extra Shadows Embeds" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Упр-ння користувачами</span></a>
                     <ul class="pcoded-submenu">
@@ -125,7 +152,7 @@
                         <li class=""><a href="bc_extra.html" class="">Other<span class="pcoded-badge label label-primary">NEW</span></a></li>
                     </ul>
                 </li>
-                {/if}
+                <?php }?>
                 <li data-username="advance components Alert gridstack lightbox modal notification pnotify rating rangeslider slider syntax highlighter Tour Tree view Nestable Toolbar" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Управління запитами</span></a>
                     <ul class="pcoded-submenu">
@@ -338,9 +365,9 @@
                                 support ?</span></a></li>
             </ul>
         </div>
-        {else}
+        <?php } else { ?>
             Увійдіть, щоб відобразити Головне меню
-        {/if}
+        <?php }?>
     </div>
 </nav>
 
@@ -446,15 +473,17 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-notification">
                         <div class="pro-head">
-                            {if isset($user_photo, $user_name) && !empty($user_photo) && !empty($user_name)}
-                            <img src="images/{$user_photo}" class="img-radius" alt="User-Profile-Image">
-                            <span>{$user_name}</span>
+                            <?php if ((isset($_smarty_tpl->tpl_vars['user_photo']->value) && isset($_smarty_tpl->tpl_vars['user_name']->value)) && !empty($_smarty_tpl->tpl_vars['user_photo']->value) && !empty($_smarty_tpl->tpl_vars['user_name']->value)) {?>
+                            <img src="images/<?php echo $_smarty_tpl->tpl_vars['user_photo']->value;?>
+" class="img-radius" alt="User-Profile-Image">
+                            <span><?php echo $_smarty_tpl->tpl_vars['user_name']->value;?>
+</span>
                             <a href="exit.php" class="dud-logout" title="Logout">
                                 <i class="feather icon-log-out"></i>
                             </a>
-                            {else}
+                            <?php } else { ?>
                             <span>Користувач не увійшов</span>
-                            {/if}
+                            <?php }?>
                         </div>
 
                         <ul class="pro-body">
@@ -697,10 +726,12 @@
                 <div class="main-body">
                     <div class="page-wrapper">
 
-                        <h2>{$title}</h2>
+                        <h2><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
+</h2>
 
                         <div>
-                            {$content}
+                            <?php echo $_smarty_tpl->tpl_vars['content']->value;?>
+
                         </div>
                         <!--
                         <!-- [ Main Content ] start --
@@ -1148,26 +1179,56 @@
 <!-- Warning Section Ends -->
 
 <!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<?php echo '<script'; ?>
+ src="assets/js/vendor-all.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 
-<script src="assets/js/pcoded.min.js"></script>
+<?php echo '<script'; ?>
+ src="assets/js/pcoded.min.js"><?php echo '</script'; ?>
+>
 <!-- amchart js -->
-<script src="assets/plugins/amchart/js/amcharts.js"></script>
-<script src="assets/plugins/amchart/js/gauge.js"></script>
-<script src="assets/plugins/amchart/js/serial.js"></script>
-<script src="assets/plugins/amchart/js/light.js"></script>
-<script src="assets/plugins/amchart/js/pie.min.js"></script>
-<script src="assets/plugins/amchart/js/ammap.min.js"></script>
-<script src="assets/plugins/amchart/js/usaLow.js"></script>
-<script src="assets/plugins/amchart/js/radar.js"></script>
-<script src="assets/plugins/amchart/js/worldLow.js"></script>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/amcharts.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/gauge.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/serial.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/light.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/pie.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/ammap.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/usaLow.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/radar.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="assets/plugins/amchart/js/worldLow.js"><?php echo '</script'; ?>
+>
 <!-- notification Js -->
-<script src="assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+<?php echo '<script'; ?>
+ src="assets/plugins/notification/js/bootstrap-growl.min.js"><?php echo '</script'; ?>
+>
 
 <!-- dashboard-custom js -->
-<script src="assets/js/pages/dashboard-custom.js"></script>
+<?php echo '<script'; ?>
+ src="assets/js/pages/dashboard-custom.js"><?php echo '</script'; ?>
+>
 
 </body>
 
 </html>
+<?php }
+}

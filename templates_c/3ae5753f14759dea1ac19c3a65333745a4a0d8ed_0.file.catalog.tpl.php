@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-19 10:55:58
+/* Smarty version 4.3.2, created on 2023-09-25 17:09:05
   from 'C:\OSPanel\domains\MyFirstShop\templates\catalog.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_6509540eee00b9_27004153',
+  'unifunc' => 'content_651194816fdd44_83035698',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3ae5753f14759dea1ac19c3a65333745a4a0d8ed' => 
     array (
       0 => 'C:\\OSPanel\\domains\\MyFirstShop\\templates\\catalog.tpl',
-      1 => 1695110130,
+      1 => 1695650943,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6509540eee00b9_27004153 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651194816fdd44_83035698 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h5 style="background-color:#d6d6d6; border-radius:15px; padding-left:20px; margin: 10px 430px 5px 20px;">
     <a href="catalog.php?sort=desc<?php if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
@@ -68,10 +68,27 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                         <div class="body__price">
                             <div class="price__number"><?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['price'];?>
 </div>
-                            <a href="basket.php?id=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
-&mode=add">
-                                <button class="price__button">Придбати</button>
-                            </a>
+                            <?php if ($_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['colvo'] == 0) {?>
+                                Товар закінчився на складі
+                            <?php } else { ?>
+                                <a href="basket.php?id=<?php echo $_smarty_tpl->tpl_vars['catalog']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id'];?>
+&mode=add<?php if ((isset($_smarty_tpl->tpl_vars['active_page']->value)) && !empty($_smarty_tpl->tpl_vars['active_page']->value)) {?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['sort']->value)) && !empty($_smarty_tpl->tpl_vars['sort']->value)) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['id_cat']->value)) && !empty($_smarty_tpl->tpl_vars['id_cat']->value)) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>&search=<?php echo $_smarty_tpl->tpl_vars['search']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['min_price']->value) && isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>&min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
+&max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
+}
+if ((isset($_smarty_tpl->tpl_vars['note']->value)) && !empty($_smarty_tpl->tpl_vars['note']->value)) {?>&note=<?php echo $_smarty_tpl->tpl_vars['note']->value;
+}?>">
+                                    <button class="price__button">Придбати</button>
+                                </a>
+                            <?php }?>
+
                         </div>
                     </div>
                 </div>

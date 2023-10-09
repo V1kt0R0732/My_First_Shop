@@ -77,12 +77,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="clearfix"> </div>
             </div>
             <div class="header-bottom-right">
-                <div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div>
+                {if !isset($user_id) || empty($user_id)}
                 <ul class="login">
-                    <li><a href="login.html"><span> </span>LOGIN</a></li> |
-                    <li ><a href="register.html">SIGNUP</a></li>
+                    <li><a href="login.php"><span> </span>LOGIN</a></li> |
+                    <li ><a href="registration.php">SIGNUP</a></li>
                 </ul>
-                <div class="cart"><a href="order.php"><span> </span>CART - {if isset($count_basket)}{$count_basket}{else}0{/if}</a></div>
+                    {else}
+                    <div class="account"><a href="login.php"><span> </span>{$user_FIO}</a></div>
+                {/if}
+                <div class="cart"><a href="order.php{if isset($active_page) && !empty($active_page)}?page={$active_page}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_cat) && !empty($id_cat)}&id_cat={$id_cat}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($min_price, $max_price)}&min_price={$min_price}&max_price={$max_price}{/if}{if isset($note) && !empty($note)}&note={$note}{/if}"><span> </span>CART - {if isset($count_basket)}{$count_basket}{else}0{/if}</a></div>
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>

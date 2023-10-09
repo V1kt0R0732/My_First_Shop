@@ -69,10 +69,50 @@
         header('location:order.php');
     }
 
+    if (isset($_POST['ready_params']) && !empty($ready_params)){
+        $ready_params = $_POST['ready_params'];
+    }
+    else{
+        $params = [];
+
+        if (isset($_GET['page'])){
+            $params[] .= "page={$_GET['page']}";
+        }
+        if (isset($_GET['sort'])){
+            $params[] .= "sort={$_GET['sort']}";
+        }
+        if (isset($_GET['id_cat'])){
+            $params[] .= "id_cat={$_GET['id_cat']}";
+        }
+        if (isset($_GET['search'])){
+            $params[] .= "search={$_GET['search']}";
+        }
+        if (isset($_GET['max_price'], $_GET['min_price'])){
+            $params[] .= "max_price={$_GET['max_price']}&min_price={$_GET['min_price']}";
+        }
+        if (isset($_GET['note'])){
+            $params[] .= "note={$_GET['note']}";
+        }
+
+        $ready_params = implode('&', $params);
+    }
+
+
 if (isset($_GET['mode']) && $_GET['mode'] == 'dell'){
-    header('location:order.php');
+    if (!empty($ready_params)){
+        header("location:order.php?$ready_params");
+    }
+    else{
+        header('location:order.php');
+    }
 }
+
 elseif (isset($_GET['mode']) && $_GET['mode'] == 'add' || $_GET['mode'] == 'clear'){
-    header('location:catalog.php');
+    if(!empty($ready_params)){
+        header("location:catalog.php?$ready_params");
+    }
+    else{
+        header('location:catalog.php');
+    }
 }
 

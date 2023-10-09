@@ -9,8 +9,6 @@
         $_SESSION['user_photo'] = $_COOKIE['user_photo'];
         $_SESSION['user_role'] = $_COOKIE['user_role'];
 
-
-
     }
 
     define("SMARTY_LIB", '../libs/');

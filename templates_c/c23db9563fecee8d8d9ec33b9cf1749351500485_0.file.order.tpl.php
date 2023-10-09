@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-20 17:48:02
+/* Smarty version 4.3.2, created on 2023-10-02 11:19:08
   from 'C:\OSPanel\domains\MyFirstShop\templates\order.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_650b0622b23064_59389167',
+  'unifunc' => 'content_651a7cfc577cf8_92806591',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c23db9563fecee8d8d9ec33b9cf1749351500485' => 
     array (
       0 => 'C:\\OSPanel\\domains\\MyFirstShop\\templates\\order.tpl',
-      1 => 1695221281,
+      1 => 1696234673,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_650b0622b23064_59389167 (Smarty_Internal_Template $_smarty_tpl) {
+function content_651a7cfc577cf8_92806591 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="basket.php" method="post">
 <table border="2" style="margin-left:20px">
     <tr>
@@ -67,9 +67,19 @@ for ($__section_k_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
     </tr>
     <tr>
         <th colspan="5"><a href="basket.php?mode=clear">Очистити</a></th>
-        <th colspan="2"><a>Сплатити</a></th>
+        <th colspan="2"><a href="order_buy.php">Сплатити</a></th>
     </tr>
-    <tr><th colspan="7"><input type="submit" name="send" value="Перерахувати"></th></tr>
+    <tr>
+        <?php if ((isset($_smarty_tpl->tpl_vars['ready_params']->value)) && !empty($_smarty_tpl->tpl_vars['ready_params']->value)) {?>
+            <th colspan="4"><a href="catalog.php?<?php echo $_smarty_tpl->tpl_vars['ready_params']->value;?>
+">Повернутись до каталогу</a></th>
+            <input type="hidden" name="ready_params" value="<?php echo $_smarty_tpl->tpl_vars['ready_params']->value;?>
+">
+            <?php } else { ?>
+            <th colspan="4"><a href="catalog.php">Повернутись до каталогу</a></th>
+        <?php }?>
+        <th colspan="3"><input type="submit" name="send" value="Перерахувати"></th>
+    </tr>
 
 </table>
 </form>
