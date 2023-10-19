@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-25 17:09:05
+/* Smarty version 4.3.2, created on 2023-10-11 16:28:06
   from 'C:\OSPanel\domains\MyFirstShop\templates\catalog.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_651194816fdd44_83035698',
+  'unifunc' => 'content_6526a2e6dfd420_56241921',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3ae5753f14759dea1ac19c3a65333745a4a0d8ed' => 
     array (
       0 => 'C:\\OSPanel\\domains\\MyFirstShop\\templates\\catalog.tpl',
-      1 => 1695650943,
+      1 => 1697030857,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651194816fdd44_83035698 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6526a2e6dfd420_56241921 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h5 style="background-color:#d6d6d6; border-radius:15px; padding-left:20px; margin: 10px 430px 5px 20px;">
-    <a href="catalog.php?sort=desc<?php if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
+    <a href="items_list.php?sort=desc<?php if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
 }?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;?>
 &min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
 &max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
@@ -31,7 +31,7 @@ if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl
 }?>">
         Від дешевих до дорогих
     </a> |
-    <a href="catalog.php?sort=asc<?php if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
+    <a href="items_list.php?sort=asc<?php if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
 }?>&page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;?>
 &min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;?>
 &max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
@@ -109,7 +109,7 @@ if ((isset($_smarty_tpl->tpl_vars['note']->value)) && !empty($_smarty_tpl->tpl_v
                 <?php if ($_smarty_tpl->tpl_vars['active_page']->value == 1) {?>
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> < </td>
                 <?php } else { ?>
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value-1;
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="items_list.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value-1;
 if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
@@ -130,7 +130,7 @@ for ($_foo=true;$_smarty_tpl->tpl_vars['k']->value <= $_smarty_tpl->tpl_vars['co
                         <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"><?php echo $_smarty_tpl->tpl_vars['k']->value;?>
 </td>
                     <?php } else { ?>
-                        <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page=<?php echo $_smarty_tpl->tpl_vars['k']->value;
+                        <td style="background-color:grey; padding:7px; border-radius:10px"><a href="items_list.php?page=<?php echo $_smarty_tpl->tpl_vars['k']->value;
 if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;
@@ -148,7 +148,7 @@ if ((isset($_smarty_tpl->tpl_vars['note']->value))) {?>&note=<?php echo $_smarty
                 <?php if ($_smarty_tpl->tpl_vars['active_page']->value == $_smarty_tpl->tpl_vars['count_page']->value) {?>
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> > </td>
                 <?php } else { ?>
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value+1;
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="items_list.php?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value+1;
 if ((isset($_smarty_tpl->tpl_vars['id_cat']->value))) {?>&id_cat=<?php echo $_smarty_tpl->tpl_vars['id_cat']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty_tpl->tpl_vars['sort']->value;

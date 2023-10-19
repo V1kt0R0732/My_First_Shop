@@ -83,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li ><a href="registration.php">SIGNUP</a></li>
                 </ul>
                     {else}
-                    <div class="account"><a href="login.php"><span> </span>{$user_FIO}</a></div>
+                    <div class="account"><a href="profile.php"><span> </span>{$user_FIO}</a></div>
                 {/if}
                 <div class="cart"><a href="order.php{if isset($active_page) && !empty($active_page)}?page={$active_page}{/if}{if isset($sort) && !empty($sort)}&sort={$sort}{/if}{if isset($id_cat) && !empty($id_cat)}&id_cat={$id_cat}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($min_price, $max_price)}&min_price={$min_price}&max_price={$max_price}{/if}{if isset($note) && !empty($note)}&note={$note}{/if}"><span> </span>CART - {if isset($count_basket)}{$count_basket}{else}0{/if}</a></div>
                 <div class="clearfix"> </div>
@@ -102,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <h1 style="padding-left:325px">{$title}</h1>
 
-    {if (isset($page) && $page == 'catalog')}
+    {if (isset($page) && $page == 'items_list')}
         <div class="main__categories categories">
             <div class="categories__body">
                 <div class="categories__tirle">Категорії</div>
@@ -112,7 +112,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="categories__icon">
                                 <img src="" alt="">
                             </div>
-                            <a href="catalog.php?id_cat={$category[k].id_cat}{if isset($min_price)}&min_price={$min_price}{/if}{if isset($max_price)}&max_price={$max_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($sort)}&sort={$sort}{/if}" class="">
+                            <a href="items_list.php?id_cat={$category[k].id_cat}{if isset($min_price)}&min_price={$min_price}{/if}{if isset($max_price)}&max_price={$max_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($sort)}&sort={$sort}{/if}" class="">
                                 <div class="categories__paragraf">{$category[k].name}</div>
                             </a>
                         </div>
@@ -121,7 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="categories__icon">
                                 <img src="" alt="">
                             </div>
-                            <a href="catalog.php?id_cat={$category[k].id_cat}{if isset($min_price)}&min_price={$min_price}{/if}{if isset($max_price)}&max_price={$max_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($sort)}&sort={$sort}{/if}" class="">
+                            <a href="items_list.php?id_cat={$category[k].id_cat}{if isset($min_price)}&min_price={$min_price}{/if}{if isset($max_price)}&max_price={$max_price}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}{if isset($sort)}&sort={$sort}{/if}" class="">
                                 <div class="categories__paragraf">{$category[k].name}</div>
                             </a>
                         </div>
@@ -132,11 +132,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="categories__icon">
                         <img src="" alt="">
                     </div>
-                    <a href="catalog.php" class="">
+                    <a href="items_list.php" class="">
                         <div class="categories__paragraf">Скинути фільтр</div>
                     </a>
                 </div>
-                <form action="catalog.php" method="get">
+                <form action="items_list.php" method="get">
                     <div class="categories__tirle">Пошук</div>
                     <input type="text" name="search" {if isset($search) && !empty($search)}value="{$search}"  {else}placeholder="Пошук за назвою"{/if}>
                     <br>
@@ -152,7 +152,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     {/if}
                     <input type="submit" name="send" value="Пошук">
                 </form>
-                <form action="catalog.php" method="get">
+                <form action="items_list.php" method="get">
                     <div class="categories__tirle">Кільсть Товарів</div>
                     {if isset($search)}
                         <input type="hidden" name="search" value="{$search}">

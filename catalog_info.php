@@ -1,7 +1,7 @@
 <?php
     require_once('header.php');
 
-    $page = 'catalog';
+    $page = 'items_list';
 
     if (isset($_GET['id']) && !empty($_GET['id'])){
 

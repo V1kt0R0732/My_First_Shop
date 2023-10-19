@@ -1,10 +1,10 @@
 {* Сортутування *}
 
 <h5 style="background-color:#d6d6d6; border-radius:15px; padding-left:20px; margin: 10px 430px 5px 20px;">
-    <a href="catalog.php?sort=desc{if isset($id_cat)}&id_cat={$id_cat}{/if}&page={$active_page}&min_price={$min_price}&max_price={$max_price}{if isset($search) && !empty($search)}&search={$search}{/if}">
+    <a href="items_list.php?sort=desc{if isset($id_cat)}&id_cat={$id_cat}{/if}&page={$active_page}&min_price={$min_price}&max_price={$max_price}{if isset($search) && !empty($search)}&search={$search}{/if}">
         Від дешевих до дорогих
     </a> |
-    <a href="catalog.php?sort=asc{if isset($id_cat)}&id_cat={$id_cat}{/if}&page={$active_page}&min_price={$min_price}&max_price={$max_price}{if isset($search) && !empty($search)}&search={$search}{/if}">
+    <a href="items_list.php?sort=asc{if isset($id_cat)}&id_cat={$id_cat}{/if}&page={$active_page}&min_price={$min_price}&max_price={$max_price}{if isset($search) && !empty($search)}&search={$search}{/if}">
         Від дорогих до дешевих
     </a>
 </h5>
@@ -53,19 +53,19 @@
                 {if $active_page == 1}
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> < </td>
                 {else}
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page - 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}"> < </a></td>
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="items_list.php?page={$active_page - 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}"> < </a></td>
                 {/if}
                 {for $k = 1; $k <= $count_page; $k++}
                     {if ($active_page == $k)}
                         <td style="background-color:#bbb8b8; padding:7px; border-radius:10px">{$k}</td>
                     {else}
-                        <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$k}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}">{$k}</a></td>
+                        <td style="background-color:grey; padding:7px; border-radius:10px"><a href="items_list.php?page={$k}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}">{$k}</a></td>
                     {/if}
                 {/for}
                 {if $active_page == $count_page}
                     <td style="background-color:#bbb8b8; padding:7px; border-radius:10px"> > </td>
                 {else}
-                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="catalog.php?page={$active_page + 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}"> > </a></td>
+                    <td style="background-color:grey; padding:7px; border-radius:10px"><a href="items_list.php?page={$active_page + 1}{if isset($id_cat)}&id_cat={$id_cat}{/if}{if isset($sort)}&sort={$sort}{/if}{if isset($search) && !empty($search)}&search={$search}{/if}&min_price={$min_price}&max_price={$max_price}{if isset($note)}&note={$note}{/if}"> > </a></td>
                 {/if}
             {/if}
         </tr>

@@ -63,10 +63,12 @@
                     <ul class="pcoded-submenu">
                         <li class="active"><a href="addCategory.php" class="">Додати категорія</a></li>
                         <li class=""><a href="indexCategory.php" class="">Редагування/Видалення</a></li>
+                        {*
                         <li class=""><a href="dashboard-crm.html" class="">CRM</a></li>
                         <li class=""><a href="dashboard-analytics.html" class="">Analytics</a></li>
                         <li class=""><a href="dashboard-crypto.html" class="">Crypto<span class="pcoded-badge label label-danger">NEW</span></a></li>
                         <li class=""><a href="dashboard-project.html" class="">Project</a></li>
+                        *}
                     </ul>
                 </li>
                 <li data-username="Vertical Horizontal Box Layout RTL fixed static Collapse menu color icon dark" class="nav-item pcoded-hasmenu">
@@ -74,6 +76,7 @@
                     <ul class="pcoded-submenu">
                         <li class=""><a href="addCatalog.php" class="" >Додати товар</a></li>
                         <li class=""><a href="indexCatalog.php" class="">Редагування/Видалення</a></li>
+                        {*
                         <li class="pcoded-hasmenu"><a href="#!" class="">Vertical</a>
                             <ul class="pcoded-submenu">
                                 <li class=""><a href="layout-static.html" class="" target="_blank">Static</a></li>
@@ -86,6 +89,7 @@
                         <li class=""><a href="layout-light.html" class="" target="_blank">Light layout</a></li>
                         <li class=""><a href="layout-dark.html" class="" target="_blank">Dark layout <span class="pcoded-badge label label-danger">Hot</span></a></li>
                         <li class=""><a href="layout-menu-icon.html" class="" target="_blank">Color icon</a></li>
+                        *}
                     </ul>
                 </li>
                 {if (isset($user_role) && $user_role == 1)}
@@ -93,10 +97,12 @@
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-layers"></i></span><span class="pcoded-mtext">Сторінки</span><span class="pcoded-badge label label-info">100+</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="indexPage.php" class="">Редагування</a></li>
+                        {*
                         <li class=""><a href="widget-data.html" class="">Data</a></li>
                         <li class=""><a href="widget-table.html" class="">Table</a></li>
                         <li class=""><a href="widget-user-card.html" class="">User</a></li>
                         <li class=""><a href="widget-chart.html" class="">Chart</a></li>
+                        *}
                     </ul>
                 </li>
                 {/if}
@@ -108,6 +114,7 @@
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Упр-ння користувачами</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="registration.php" class="">Реєстрація користувачів</a></li>
+                        {*
                         <li class=""><a href="bc_button.html" class="">Button</a></li>
                         <li class=""><a href="bc_badges.html" class="">Badges</a></li>
                         <li class=""><a href="bc_breadcrumb-pagination.html" class="">Breadcrumb & paggination</a></li>
@@ -123,6 +130,7 @@
                         <li class=""><a href="bc_tooltip-popover.html" class="">Tooltip & popovers</a></li>
                         <li class=""><a href="bc_toasts.html" class="">Toasts<span class="pcoded-badge label label-danger">NEW</span></a></li>
                         <li class=""><a href="bc_extra.html" class="">Other<span class="pcoded-badge label label-primary">NEW</span></a></li>
+                        *}
                     </ul>
                 </li>
                 {/if}
@@ -130,7 +138,8 @@
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Управління запитами</span></a>
                     <ul class="pcoded-submenu">
                         <li class=""><a href="status_order.php" class="">Запити</a></li>
-                        <li class=""><a href="ac-datepicker-componant.html" class="">Datepicker</a></li>
+                        <li class=""><a href="archiv.php" class="">Арів</a></li>
+                        {*
                         <li class=""><a href="ac_gridstack.html" class="">Gridstack</a></li>
                         <li class=""><a href="ac_lightbox.html" class="">Lightbox</a></li>
                         <li class=""><a href="ac_modal.html" class="">Modal</a></li>
@@ -144,8 +153,10 @@
                         <li class=""><a href="ac_tour.html" class="">Tour</a></li>
                         <li class=""><a href="ac_treeview.html" class="">Tree view</a></li>
                         <li class=""><a href="ac_toolbar.html" class="">Toolbar</a></li>
+                        *}
                     </ul>
                 </li>
+                {*
                 <li data-username="extra components Session Timeout Session Idle Timeout Offline" class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-package"></i></span><span class="pcoded-mtext">Extra</span></a>
                     <ul class="pcoded-submenu">
@@ -336,6 +347,7 @@
                 <li data-username="Documentation" class="nav-item"><a href="docs.html" class="nav-link" target="_blank"><span class="pcoded-micon"><i class="feather icon-book"></i></span><span class="pcoded-mtext">Documentation</span></a></li>
                 <li data-username="Need Support" class="nav-item"><a href="https://codedthemes.support-hub.io/" class="nav-link" target="_blank"><span class="pcoded-micon"><i class="feather icon-help-circle"></i></span><span class="pcoded-mtext">Need
                                 support ?</span></a></li>
+                *}
             </ul>
         </div>
         {else}
@@ -461,7 +473,7 @@
                             <li><a href="updateUser.php" class="dropdown-item"><i class="feather icon-settings"></i> Settings</a></li>
                             <li><a href="#!" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
                             <li><a href="message.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
-                            <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            <li><a href="../items_list.php" class="dropdown-item"><i class="feather icon-lock"></i> To Catalog</a></li>
                         </ul>
                     </div>
                 </div>

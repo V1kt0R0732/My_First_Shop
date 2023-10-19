@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-10-02 16:33:54
+/* Smarty version 4.3.2, created on 2023-10-19 12:28:54
   from 'C:\OSPanel\domains\MyFirstShop\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_651ac6c20e4ec9_88631463',
+  'unifunc' => 'content_6530f6d66da685_90100260',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6ac1af9719c8799db8847093819ee70bae8c636e' => 
     array (
       0 => 'C:\\OSPanel\\domains\\MyFirstShop\\templates\\main.tpl',
-      1 => 1696253632,
+      1 => 1697707732,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_651ac6c20e4ec9_88631463 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6530f6d66da685_90100260 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -113,7 +113,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li ><a href="registration.php">SIGNUP</a></li>
                 </ul>
                     <?php } else { ?>
-                    <div class="account"><a href="login.php"><span> </span><?php echo $_smarty_tpl->tpl_vars['user_FIO']->value;?>
+                    <div class="account"><a href="profile.php"><span> </span><?php echo $_smarty_tpl->tpl_vars['user_FIO']->value;?>
 </a></div>
                 <?php }?>
                 <div class="cart"><a href="order.php<?php if ((isset($_smarty_tpl->tpl_vars['active_page']->value)) && !empty($_smarty_tpl->tpl_vars['active_page']->value)) {?>?page=<?php echo $_smarty_tpl->tpl_vars['active_page']->value;
@@ -159,7 +159,7 @@ for ($__section_i_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
     <h1 style="padding-left:325px"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
 
-    <?php if (((isset($_smarty_tpl->tpl_vars['page']->value)) && $_smarty_tpl->tpl_vars['page']->value == 'catalog')) {?>
+    <?php if (((isset($_smarty_tpl->tpl_vars['page']->value)) && $_smarty_tpl->tpl_vars['page']->value == 'items_list')) {?>
         <div class="main__categories categories">
             <div class="categories__body">
                 <div class="categories__tirle">Категорії</div>
@@ -175,7 +175,7 @@ for ($__section_k_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_k']-
                             <div class="categories__icon">
                                 <img src="" alt="">
                             </div>
-                            <a href="catalog.php?id_cat=<?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'];
+                            <a href="items_list.php?id_cat=<?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'];
 if ((isset($_smarty_tpl->tpl_vars['min_price']->value))) {?>&min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>&max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
@@ -193,7 +193,7 @@ if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty
                             <div class="categories__icon">
                                 <img src="" alt="">
                             </div>
-                            <a href="catalog.php?id_cat=<?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'];
+                            <a href="items_list.php?id_cat=<?php echo $_smarty_tpl->tpl_vars['category']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_k']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_k']->value['index'] : null)]['id_cat'];
 if ((isset($_smarty_tpl->tpl_vars['min_price']->value))) {?>&min_price=<?php echo $_smarty_tpl->tpl_vars['min_price']->value;
 }
 if ((isset($_smarty_tpl->tpl_vars['max_price']->value))) {?>&max_price=<?php echo $_smarty_tpl->tpl_vars['max_price']->value;
@@ -216,11 +216,11 @@ if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty
                     <div class="categories__icon">
                         <img src="" alt="">
                     </div>
-                    <a href="catalog.php" class="">
+                    <a href="items_list.php" class="">
                         <div class="categories__paragraf">Скинути фільтр</div>
                     </a>
                 </div>
-                <form action="catalog.php" method="get">
+                <form action="items_list.php" method="get">
                     <div class="categories__tirle">Пошук</div>
                     <input type="text" name="search" <?php if ((isset($_smarty_tpl->tpl_vars['search']->value)) && !empty($_smarty_tpl->tpl_vars['search']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['search']->value;?>
 "  <?php } else { ?>placeholder="Пошук за назвою"<?php }?>>
@@ -241,7 +241,7 @@ if ((isset($_smarty_tpl->tpl_vars['sort']->value))) {?>&sort=<?php echo $_smarty
                     <?php }?>
                     <input type="submit" name="send" value="Пошук">
                 </form>
-                <form action="catalog.php" method="get">
+                <form action="items_list.php" method="get">
                     <div class="categories__tirle">Кільсть Товарів</div>
                     <?php if ((isset($_smarty_tpl->tpl_vars['search']->value))) {?>
                         <input type="hidden" name="search" value="<?php echo $_smarty_tpl->tpl_vars['search']->value;?>

@@ -2,7 +2,7 @@
 
 require_once('header.php');
 
-$page = 'catalog';
+$page = 'items_list';
 $smarty_main -> assign('page', $page);
 $smarty_catalog = new Smarty();
 

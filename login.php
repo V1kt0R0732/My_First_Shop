@@ -42,6 +42,10 @@
             header('refresh:2;url=login.php');
         }
     }
+    else{
+        $fullContent = "Дані введено не правильно";
+        header('refresh:2;url=login.php');
+    }
 
 
 

@@ -44,7 +44,7 @@
             if (isset($_SESSION['basket']) && !empty($_SESSION['basket'])){
                 foreach($_SESSION['basket'] as $item){
 
-                    $query_order = "insert into relationOrder (idUser, idCat, countCat, status, dataCat) values ('{$_POST['user_id']}','{$item['id']}','{$item['count']}','0',now()) ";
+                    $query_order = "insert into relationOrder (idUser, idCat, countCat, status, dataCat, description) values ('{$_POST['user_id']}','{$item['id']}','{$item['count']}','1',now(), '".MyProtection($dbc, $_POST['disc'])."') ";
 
                     mysqli_query($dbc, $query_order) or die("query Order Error");
 
@@ -61,7 +61,7 @@
 
             if (isset($_SESSION['basket']) && !empty($_SESSION['basket'])){
                 foreach($_SESSION['basket'] as $item){
-                    $query_visitor_order = "insert into visitorRelationOrder (idVisitor, idVisitorCat, visitorStatus, visitorDataCat, visitorCount, visitorDescription) values('$id_client', '{$item['id']}', 0, now(), '{$item['count']}', '".MyProtection($dbc, $_POST['disc'])."')";
+                    $query_visitor_order = "insert into visitorRelationOrder (idVisitor, idVisitorCat, visitorStatus, visitorDataCat, visitorCount, visitorDescription) values('$id_client', '{$item['id']}', 1, now(), '{$item['count']}', '".MyProtection($dbc, $_POST['disc'])."')";
                     mysqli_query($dbc, $query_visitor_order) or die("Query Visitor Order Error");
 
                 }
@@ -73,7 +73,7 @@
 
 
         $fullContent = "Товар Ууспішно замовлено, і вже обробляється нашими Адміністраторами";
-        header("location:catalog.php");
+        header("refresh:3;url=items_list.php");
     }
 
 

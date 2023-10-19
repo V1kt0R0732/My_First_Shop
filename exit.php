@@ -12,7 +12,7 @@ if (isset($_COOKIE['id'], $_COOKIE['FIO'], $_COOKIE['email'], $_COOKIE['phone'],
     $_SESSION = [];
     session_destroy();
 
-    header("location:catalog.php");
+    header("location:items_list.php");
 
 }
 

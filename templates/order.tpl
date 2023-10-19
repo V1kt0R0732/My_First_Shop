@@ -15,7 +15,7 @@
             <td><img width = 80px src="img/{$basket[k].photo}"></td>
             <td>{$basket[k].name}</td>
             <td>{$basket[k].price}</td>
-            <td><input name="count{$basket[k].id}" type="number" min="1" value="{$basket[k].count}"></td>
+            <td><input name="count{$basket[k].id}" type="number" min="1" max="{$basket[k].max}" value="{$basket[k].count}"></td>
             <td>{$basket[k].sum}</td>
             <td><a href="basket.php?id={$basket[k].id}&mode=dell">Видалити</a></td>
         </tr>
@@ -30,10 +30,10 @@
     </tr>
     <tr>
         {if isset($ready_params) && !empty($ready_params)}
-            <th colspan="4"><a href="catalog.php?{$ready_params}">Повернутись до каталогу</a></th>
+            <th colspan="4"><a href="items_list.php?{$ready_params}">Повернутись до каталогу</a></th>
             <input type="hidden" name="ready_params" value="{$ready_params}">
             {else}
-            <th colspan="4"><a href="catalog.php">Повернутись до каталогу</a></th>
+            <th colspan="4"><a href="items_list.php">Повернутись до каталогу</a></th>
         {/if}
         <th colspan="3"><input type="submit" name="send" value="Перерахувати"></th>
     </tr>

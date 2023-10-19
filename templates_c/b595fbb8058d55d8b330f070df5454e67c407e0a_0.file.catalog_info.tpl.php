@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2023-09-20 16:58:59
+/* Smarty version 4.3.2, created on 2023-10-19 12:24:30
   from 'C:\OSPanel\domains\MyFirstShop\templates\catalog_info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_650afaa3de4df4_15165655',
+  'unifunc' => 'content_6530f5ce401112_67246606',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b595fbb8058d55d8b330f070df5454e67c407e0a' => 
     array (
       0 => 'C:\\OSPanel\\domains\\MyFirstShop\\templates\\catalog_info.tpl',
-      1 => 1694443209,
+      1 => 1697030857,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_650afaa3de4df4_15165655 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6530f5ce401112_67246606 (Smarty_Internal_Template $_smarty_tpl) {
 if (($_smarty_tpl->tpl_vars['id_photo']->value == $_smarty_tpl->tpl_vars['photo_id_main']->value)) {?>
     <img src="img/<?php echo $_smarty_tpl->tpl_vars['main_photo']->value;?>
 " width="200px"><br>
@@ -98,5 +98,5 @@ for ($__section_i_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_i']-
 </p>
 <h5>Ціна: <b><?php echo $_smarty_tpl->tpl_vars['price']->value;?>
 </b></h5>
-<a href="catalog.php">Назад</a><?php }
+<a href="items_list.php">Назад</a><?php }
 }

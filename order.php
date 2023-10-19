@@ -3,7 +3,7 @@
     require_once('header.php');
 
     $smarty_order = new Smarty();
-    $page = 'catalog';
+    $page = 'items_list';
     $smarty_main -> assign('page', $page);
 
 
@@ -38,7 +38,11 @@
         for ($i = 0; $i < count($_SESSION['basket']); $i++){
             $sum = 0;
             $sum = $_SESSION['basket'][$i]['price'] * $_SESSION['basket'][$i]['count'];
-            $basket[] = ['num'=>$num, 'name'=>$_SESSION['basket'][$i]['name'],'id'=>$_SESSION['basket'][$i]['id'], 'price'=>$_SESSION['basket'][$i]['price'], 'photo'=>$_SESSION['basket'][$i]['photo'], 'count'=>$_SESSION['basket'][$i]['count'], 'sum'=>$sum];
+            $query_max = "select colvo from catalog where id = {$_SESSION['basket'][$i]['id']}";
+            $result_max = mysqli_query($dbc, $query_max) or die("Query Max Error");
+            $row = mysqli_fetch_array($result_max);
+
+            $basket[] = ['max'=>$row['colvo'],'num'=>$num, 'name'=>$_SESSION['basket'][$i]['name'],'id'=>$_SESSION['basket'][$i]['id'], 'price'=>$_SESSION['basket'][$i]['price'], 'photo'=>$_SESSION['basket'][$i]['photo'], 'count'=>$_SESSION['basket'][$i]['count'], 'sum'=>$sum];
             $num++;
             $total_price += $_SESSION['basket'][$i]['price'] * $_SESSION['basket'][$i]['count'];
         }
@@ -58,10 +62,10 @@
     else{
 
         if (!empty($ready_params)){
-            header("location:catalog.php?$ready_params");
+            header("location:items_list.php?$ready_params");
         }
         else{
-            header('location:catalog.php');
+            header('location:items_list.php');
         }
 
     }

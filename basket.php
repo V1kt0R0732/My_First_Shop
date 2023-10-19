@@ -109,10 +109,10 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'dell'){
 
 elseif (isset($_GET['mode']) && $_GET['mode'] == 'add' || $_GET['mode'] == 'clear'){
     if(!empty($ready_params)){
-        header("location:catalog.php?$ready_params");
+        header("location:items_list.php?$ready_params");
     }
     else{
-        header('location:catalog.php');
+        header('location:items_list.php');
     }
 }
 

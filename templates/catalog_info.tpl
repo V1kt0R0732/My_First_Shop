@@ -28,4 +28,4 @@
 <h4>Повний опис товару:</h4>
 <p>{$fulldescription}</p>
 <h5>Ціна: <b>{$price}</b></h5>
-<a href="catalog.php">Назад</a>
+<a href="items_list.php">Назад</a>

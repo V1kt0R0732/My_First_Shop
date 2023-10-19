@@ -80,6 +80,9 @@
 
         $smarty_main -> assign('category', $category);
 
+        /////////////////////////////////////////////
+        /*               Client                    */
+
         if (isset($_COOKIE['id'], $_COOKIE['FIO'], $_COOKIE['email'], $_COOKIE['phone'], $_COOKIE['adress'])){
 
             $_SESSION['user_id'] = $_COOKIE['id'];

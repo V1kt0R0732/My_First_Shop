@@ -66,8 +66,8 @@
 {* Сортутування *}
 
 <ul>
-    <li><a href="catalog.php?sort=ask&id_cat={$id_cat}">За ціною/зменшення</a></li>
-    <li><a href="catalog.php?sort=desc&id_cat={$id_cat}">За ціною/збільшення</a></li>
+    <li><a href="items_list.php?sort=ask&id_cat={$id_cat}">За ціною/зменшення</a></li>
+    <li><a href="items_list.php?sort=desc&id_cat={$id_cat}">За ціною/збільшення</a></li>
 </ul>
 
 
