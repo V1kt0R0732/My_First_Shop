@@ -41,5 +41,5 @@
 ## 📬 Контакти
 
 - **Email:** Viktor0732@ukr.net | Viktor07322370@gmail.com | 7999233@stud.kai.edu.ua
-- **GitHub:** [github.com/username](https://github.com/username)
+- **GitHub:** [github.com/username](https://github.com/V1kt0R0732)
 
